@@ -16,11 +16,17 @@ var gulp = require('gulp'),
 critical = require('critical').stream;
 
 // Styles
-gulp.task('styles', function() {
+gulp.task('critical', function() {
 return gulp.src('src/*.html')
         .pipe(critical({base: 'src/', inline: true, minify: true, css: ['src/css/normalize.min.css', 'src/css/bulma.min.css', 'src/css/main.css']}))
         .pipe(gulp.dest('dist'))
-        .pipe(notify({ message: 'Styles task complete' }));
+        .pipe(notify({ message: 'Critical CSS inlined' }));
+});
+gulp.task('styles', function () {
+    return gulp.src('src/css/main.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles minified' }));
 });
 
 // Scripts
@@ -40,7 +46,7 @@ return del(['dist/styles', 'dist/scripts', 'dist/images']);
 });
 // Default task
 gulp.task('default', ['clean'], function() {
-gulp.start('styles', 'scripts');
+gulp.start('styles', 'scripts', 'critical');
 });
 // Watch
 gulp.task('watch', function() {
