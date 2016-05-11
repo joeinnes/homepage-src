@@ -1,8 +1,7 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 
 html {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 16px;
     background-color: #fff !important;
 }
 
@@ -18,13 +17,12 @@ html {
 
 hr.underline {
     display: block;
-    border-width: 1.5rem;
+    border-width: 0.5em;
     border-color: #4c4d57;
-    margin: 1em 0;
+    margin: 0 0 1em 0;
     padding: 0;
     width: 30%;
-    margin: 2rem 0rem 3rem;
-    height: 1.5rem;
+    height: 0em;
     box-sizing: content-box;
 }
 
@@ -63,20 +61,20 @@ textarea {
     max-width: 100%;
 }
 
-.content {
+.cont {
   font-family: "Merriweather", sans-serif;
   color: #4c4d57;
 }
 
-p.content {
-  font-size: 2.5rem;
-  line-height: 5rem !important;
+p.cont {
+  font-size: 1em;
+  line-height: 2em;
 }
 
-h1.content {
+h1.cont {
     color: #4c4d57;
-    font-size: 10rem !important;
-    font-weight: 900 !important;
+    font-size: 3em;
+    font-weight: 900;
     font-family: 'Lato';
 }
 
@@ -155,21 +153,27 @@ h1.content {
 
 @media only screen and (max-width: 520px) {
     p.content {
-        font-size: 2rem;
-        line-height: 4rem !important;
+        font-size: 1em;
+        line-height: 2em !important;
     }
 
     h1.content {
         color: #4c4d57;
-        font-size: 5rem !important;
-        font-weight: 900 !important;
-        font-family: 'Lato';
+        font-size: 1em !important;
     }
 }
 
-@media only screen and (min-width: 35em) {
-
-}
+  @media screen and (min-width: 25em){
+    html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+  }
+  
+  /* Safari <8 and IE <11 */
+  @media screen and (min-width: 25em){
+    html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+  }
+  @media screen and (min-width: 50em){
+    html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+  }
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
